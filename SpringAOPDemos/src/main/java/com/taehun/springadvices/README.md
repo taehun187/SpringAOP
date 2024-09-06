@@ -1,4 +1,3 @@
-```markdown
 # AOP with Spring Proxy Example
 
 ## 프로젝트 개요
@@ -44,7 +43,7 @@
 
 ```bash
 $ ./gradlew bootRun
-```
+
 
 ## 주요 기능
 
