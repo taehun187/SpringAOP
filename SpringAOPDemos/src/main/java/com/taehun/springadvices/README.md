@@ -53,7 +53,7 @@ $ ./gradlew bootRun
 
 ## 예시 출력
 
-```text
+
 Before method: performTask, count=1
 Performing a task
 After method: returnGreeting, return value: hello, Me, count=1
@@ -61,7 +61,7 @@ Greeting: hello, Me
 Before: invocation=[MethodInvocation: public void SimpleService.throwException()]
 Exception thrown in method: throwException, exception: This is a test exception
 Exception caught in main: This is a test exception
-```
+
 
 ## 참고 사항
 
