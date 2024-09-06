@@ -1,7 +1,3 @@
-다음은 요청하신 `README` 파일의 내용입니다:
-
----
-
 # Spring AOP 및 Transaction Management 예제
 
 ## 프로젝트 개요
@@ -10,20 +6,24 @@
 
 ## 주요 클래스 설명
 
-1. **AppConfig**
-    - **@EnableTransactionManagement**: 트랜잭션 관리 기능을 활성화합니다.
-    - **BeanNameAutoProxyCreator**: 특정 Bean 이름 패턴에 맞는 Bean을 프록시로 자동 래핑합니다. 예시에서는 `jdkMyBean`과 `onlyJdk`라는 이름의 Bean에 대해 자동 프록시가 생성됩니다.
-    - **DefaultAdvisorAutoProxyCreator**: 어드바이저 기반으로 자동 프록시를 생성합니다.
-    - **TransactionInterceptor**: 트랜잭션 관리자를 설정하고, `@Transactional` 애노테이션이 붙은 메서드에 대해 트랜잭션 처리를 적용합니다.
+### 1. `AppConfig`
 
-2. **BusinessObject1**, **BusinessObject2**
-    - **BusinessService** 인터페이스를 구현하며, 각각의 클래스에서 `@Transactional` 애노테이션이 적용되어 트랜잭션 처리를 제공합니다.
+- **@EnableTransactionManagement**: 트랜잭션 관리 기능을 활성화합니다.
+- **BeanNameAutoProxyCreator**: 특정 Bean 이름 패턴에 맞는 Bean을 프록시로 자동 래핑합니다. 예시에서는 `jdkMyBean`과 `onlyJdk`라는 이름의 Bean에 대해 자동 프록시가 생성됩니다.
+- **DefaultAdvisorAutoProxyCreator**: 어드바이저 기반으로 자동 프록시를 생성합니다.
+- **TransactionInterceptor**: 트랜잭션 관리자를 설정하고, `@Transactional` 애노테이션이 붙은 메서드에 대해 트랜잭션 처리를 적용합니다.
 
-3. **MyBean**
-    - AOP 프록시 적용 테스트를 위한 간단한 Bean입니다. `BeanNameAutoProxyCreator`에 의해 자동 프록시가 적용됩니다.
+### 2. `BusinessObject1`, `BusinessObject2`
 
-4. **프록시 정보 출력**
-    - `AopProxyUtils`를 사용하여 프록시가 JDK 동적 프록시인지 CGLIB 프록시인지 확인하고, 최종 타겟 클래스 정보를 출력합니다.
+- **BusinessService** 인터페이스를 구현하며, 각각의 클래스에서 `@Transactional` 애노테이션이 적용되어 트랜잭션 처리를 제공합니다.
+
+### 3. `MyBean`
+
+- AOP 프록시 적용 테스트를 위한 간단한 Bean입니다. `BeanNameAutoProxyCreator`에 의해 자동 프록시가 적용됩니다.
+
+### 4. 프록시 정보 출력
+
+`AopProxyUtils`를 사용하여 프록시가 JDK 동적 프록시인지 CGLIB 프록시인지 확인하고, 최종 타겟 클래스 정보를 출력합니다.
 
 ## 실행 방법
 
@@ -31,10 +31,9 @@
 2. `Main` 클래스의 `main` 메소드를 실행하여 `BusinessObject1`, `BusinessObject2`, `MyBean`에 대해 프록시가 적용되는지 확인할 수 있습니다.
 3. 각 객체에 대해 생성된 프록시 정보가 출력됩니다.
 
-실행 명령어:
-```
+```bash
 $ ./gradlew bootRun
-```
+
 
 ## 주요 기능
 
@@ -44,7 +43,7 @@ $ ./gradlew bootRun
 
 ## 예시 출력
 
-```
+```text
 Bean class: com.sun.proxy.$ProxyXX
 Is JDK dynamic proxy: true
 Is CGLIB proxy: false
@@ -67,12 +66,5 @@ Target class: MyBean
 - 트랜잭션 처리 시 `@Transactional` 애노테이션이 적용된 메서드는 AOP 프록시에 의해 트랜잭션 관리가 자동으로 처리됩니다.
 - `BeanNameAutoProxyCreator`와 `DefaultAdvisorAutoProxyCreator`는 동시에 사용될 수 있으며, 프록시 생성 시 우선순위를 `@Order`로 지정할 수 있습니다.
 
-## 의존성
-
-- Spring Framework 5.x
-- Java 8 이상
-- Gradle 또는 Maven 빌드 도구
-
----
 
 이 파일은 프로젝트의 주요 기능 및 설정에 대한 설명을 포함하며, 실행 방법과 예시 출력을 통해 프로젝트 동작 방식을 쉽게 파악할 수 있도록 도와줍니다.
