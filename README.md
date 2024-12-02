@@ -1,4 +1,4 @@
-# SpringAOPDemo
+# Spring AOP
 Spring Framework 6.2.0의 [Spring AOP APIs](https://docs.spring.io/spring-framework/reference/core/aop-api.html) 공식 문서 예제들을 구현해보며 학습했습니다.
 
 ## Section Summary
