@@ -1,2 +1,2 @@
-# SpringAOP 
-코드를 쳐보며 공부해보았습니다.
+# SpringAOP 연습해보았습니다.
+폴더 안에 각 장마다 README.md 첨부하여 설명
